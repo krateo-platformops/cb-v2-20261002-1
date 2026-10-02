@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "description": "Krateo API Builder — the cb-v2-20261002-1 controller.",
+  "properties": {
+    "global": {
+      "additionalProperties": false,
+      "description": "Set by composition-dynamic-controller on every render (composition name, namespace, kind, ...); not for a deployer to fill in.",
+      "properties": {
+        "compositionApiVersion": {
+          "type": "string"
+        },
+        "compositionGroup": {
+          "type": "string"
+        },
+        "compositionId": {
+          "type": "string"
+        },
+        "compositionInstalledVersion": {
+          "type": "string"
+        },
+        "compositionKind": {
+          "type": "string"
+        },
+        "compositionName": {
+          "type": "string"
+        },
+        "compositionNamespace": {
+          "type": "string"
+        },
+        "compositionResource": {
+          "type": "string"
+        },
+        "gracefullyPaused": {
+          "type": "string"
+        },
+        "krateoNamespace": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "title": "cb-v2-20261002-1",
+  "type": "object"
+}

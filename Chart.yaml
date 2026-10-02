@@ -1,0 +1,9 @@
+apiVersion: v2
+name: cb-v2-20261002-1
+description: Krateo controller for Swagger Petstore - OpenAPI 3.0, served in cbv2202610021.example.io.
+type: application
+version: 0.1.0
+annotations:
+  controller.builders.krateo.io/api-group: cbv2202610021.example.io
+  controller.builders.krateo.io/base-url: https://petstore3.swagger.io/api/v3
+  controller.builders.krateo.io/source-spec-version: 1.0.27

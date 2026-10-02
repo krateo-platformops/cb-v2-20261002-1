@@ -1,0 +1,37 @@
+apiVersion: ogen.krateo.io/v1alpha1
+kind: RestDefinition
+metadata:
+  name: cb-v2-20261002-1-pet
+  namespace: '{{ .Release.Namespace }}'
+  annotations:
+    controller.builders.krateo.io/operations: pet
+    controller.builders.krateo.io/omitted-verbs: findby
+spec:
+  oasPath: configmap://{{ .Release.Namespace }}/cb-v2-20261002-1-oas/openapi.json
+  resource:
+    kind: Pet
+    verbsDescription:
+      - action: create
+        method: POST
+        path: /pet
+      - action: get
+        method: GET
+        path: /pet/{petId}
+        fieldMapping:
+          - inCustomResource: status.id
+            inPath: petId
+      - action: update
+        method: PUT
+        path: /pet
+      - action: delete
+        method: DELETE
+        path: /pet/{petId}
+        fieldMapping:
+          - inCustomResource: status.id
+            inPath: petId
+    identifiers:
+      - id
+    excludedSpecFields:
+      - id
+      - petId
+  resourceGroup: cbv2202610021.example.io
